@@ -7,6 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlockBindingsLetComponent implements OnInit {
 
+  code1 = `function getValue(condition) {
+
+      if (condition) {
+          let value = 'blue';
+
+          // other code
+
+          return value;
+      } else {
+
+          // value doesn't exist here
+
+          return null;
+      }
+
+      // value doesn't exist here
+  }`;
   constructor() { }
 
   ngOnInit() {

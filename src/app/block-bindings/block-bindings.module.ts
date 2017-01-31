@@ -3,11 +3,13 @@ import { BlockBindingsLetComponent } from './block-bindings-let/block-bindings-l
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BlockBindingsComponent } from './block-bindings/block-bindings.component';
+import { UtilModule } from './../util/util.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    BlockBindingsRoutesModule
+    BlockBindingsRoutesModule,
+    UtilModule
   ],
   declarations: [
     BlockBindingsLetComponent,
