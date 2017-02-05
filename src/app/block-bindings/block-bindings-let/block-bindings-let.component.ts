@@ -1,3 +1,4 @@
+import { BlockBindingsComponent } from './../block-bindings/block-bindings.component';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./block-bindings-let.component.css']
 })
 export class BlockBindingsLetComponent implements OnInit {
+  appComp: any = this;
+  constructor() {
+  }
 
-  code1 = `function getValue(condition) {
+  ngOnInit() {
+  }
 
+  es6_let(condition) {
       if (condition) {
           let value = 'blue';
 
@@ -21,12 +27,30 @@ export class BlockBindingsLetComponent implements OnInit {
 
           return null;
       }
-
       // value doesn't exist here
-  }`;
-  constructor() { }
-
-  ngOnInit() {
   }
 
+  es6_const(){
+    const maxItems = 5;
+
+    //maxItems = 6;  it would throw an error  
+  }
+
+  es5_for(){
+    for (var i = 0; i < 10; i++) {
+        //process(items[i]);
+    }
+
+    // i is still accessible here
+    console.log(i);                     // 10
+  }
+
+  es6_for(){
+    for (let i = 0; i < 10; i++) {
+        //process(items[i]);
+    }
+
+    // i is not accessible here - throws an error
+    //console.log(i);                   // 10
+  }
 }

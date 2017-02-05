@@ -1,3 +1,6 @@
 <pre>
-  <code>{{appCode}}</code>
+  <code *ngFor="let function of functionList">
+    <h2>{{function.title}}</h2>
+    <div class="code-snippet">{{function.code}}</div>
+  </code>
 </pre>
