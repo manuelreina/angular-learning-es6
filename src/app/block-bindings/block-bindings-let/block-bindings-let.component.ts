@@ -1,20 +1,19 @@
+import { ES6Section } from './../../util/code-snippet/code-snippet.component';
 import { BlockBindingsComponent } from './../block-bindings/block-bindings.component';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-block-bindings-let',
   templateUrl: './block-bindings-let.component.html',
   styleUrls: ['./block-bindings-let.component.css']
 })
-export class BlockBindingsLetComponent implements OnInit {
-  appComp: any = this;
+export class BlockBindingsLetComponent extends ES6Section {
+
   constructor() {
+    super();
   }
 
-  ngOnInit() {
-  }
-
-  es6_let(condition) {
+  ES6_let_declarations(condition) {
       if (condition) {
           let value = 'blue';
 
@@ -30,22 +29,7 @@ export class BlockBindingsLetComponent implements OnInit {
       // value doesn't exist here
   }
 
-  es6_const(){
-    const maxItems = 5;
-
-    //maxItems = 6;  it would throw an error  
-  }
-
-  es5_for(){
-    for (var i = 0; i < 10; i++) {
-        //process(items[i]);
-    }
-
-    // i is still accessible here
-    console.log(i);                     // 10
-  }
-
-  es6_for(){
+  es6_let_in_loops(){
     for (let i = 0; i < 10; i++) {
         //process(items[i]);
     }
